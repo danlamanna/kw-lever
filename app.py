@@ -6,7 +6,7 @@ app = FastAPI()
 @app.get("/")
 async def read_root(hello: str = Header(None)):
     if hello and hello.strip().lower() == "kitware":
-        return 42
+        return "KTLbqCUse"
     elif not hello:
         return "hello header not set"
     else:
