@@ -1,10 +1,11 @@
 from fastapi import FastAPI, Header
+from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
 
-@app.get("/")
-async def read_root(hello: str = Header(None)):
+@app.get("/", response_class=PlainTextResponse)
+async def read_root(hello: str = Header(None)) -> str:
     if hello and hello.strip().lower() == "kitware":
         return "KTLbqCUse"
     elif not hello:
